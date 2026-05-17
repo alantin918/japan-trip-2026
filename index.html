@@ -1,568 +1,206 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 名古屋自由行行程計畫</title>
-    <style>
-        :root {
-            --bg-color: #f9f9f9;
-            --text-color: #333333;
-            --card-bg: #ffffff;
-            --primary-color: #e06c75;
-            --secondary-color: #d19a66;
-            --border-color: #dddddd;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        [data-theme="dark"] {
-            --bg-color: #1e1e2e;
-            --text-color: #abb2bf;
-            --card-bg: #282c34;
-            --primary-color: #e06c75;
-            --secondary-color: #d19a66;
-            --border-color: #444b59;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        header {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: var(--card-bg);
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        h1 {
-            margin: 0;
-            color: var(--primary-color);
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-            color: var(--secondary-color);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .theme-switch-wrapper {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .theme-switch {
-            display: inline-block;
-            height: 34px;
-            position: relative;
-            width: 60px;
-        }
-
-        .theme-switch input {
-            display: none;
-        }
-
-        .slider {
-            background-color: #ccc;
-            bottom: 0;
-            cursor: pointer;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            transition: .4s;
-            border-radius: 34px;
-        }
-
-        .slider:before {
-            background-color: #fff;
-            bottom: 4px;
-            content: "";
-            height: 26px;
-            left: 4px;
-            position: absolute;
-            transition: .4s;
-            width: 26px;
-            border-radius: 50%;
-        }
-
-        input:checked + .slider {
-            background-color: var(--primary-color);
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        .info-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-        }
-
-        .info-card h2 {
-            margin-top: 0;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .info-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .info-card li {
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .info-card li strong {
-            min-width: 100px;
-            color: var(--secondary-color);
-        }
-
-        .tabs {
-            display: flex;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .tab-btn {
-            background: none;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--text-color);
-            cursor: pointer;
-            outline: none;
-            opacity: 0.7;
-            transition: 0.3s;
-        }
-
-        .tab-btn.active {
-            opacity: 1;
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--primary-color);
-            margin-bottom: -2px;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .day-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .day-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .day-title span {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            margin-right: 0.8rem;
-            font-size: 1rem;
-        }
-
-        .time-block {
-            margin-bottom: 1rem;
-            padding-left: 1rem;
-            border-left: 2px dashed var(--border-color);
-        }
-
-        .time-block h4 {
-            margin: 0 0 0.3rem 0;
-            color: var(--secondary-color);
-            font-size: 1.1rem;
-        }
-
-        .time-block p {
-            margin: 0;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: #eee;
-            color: #333;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-        }
-
-        [data-theme="dark"] .badge {
-            background-color: #3e4451;
-            color: #abb2bf;
-        }
-
-        @media (max-width: 600px) {
-            .theme-switch-wrapper {
-                top: 1rem;
-                right: 1rem;
-            }
-            .tab-btn {
-                padding: 0.8rem 1rem;
-                font-size: 1rem;
-            }
-            .info-card li {
-                flex-direction: column;
-            }
-        }
-    
-        .image-gallery {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 1.2rem;
-        }
-        .image-gallery img {
-            width: 50%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 6px;
-            box-shadow: var(--shadow);
-        }
-        @media (max-width: 600px) {
-            .image-gallery {
-                flex-direction: column;
-            }
-            .image-gallery img {
-                width: 100%;
-                height: 180px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 名古屋自由行行程計畫</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>2026 名古屋自由行</h1>
-                <div class="subtitle">虎航直飛 ‧ 質感住宿 ‧ 深度慢遊</div>
-        <div style="margin-top: 10px; font-size: 0.85rem; color: var(--secondary-color);">最後更新：2026年05月18日 00時20分</div>
-        <div class="theme-switch-wrapper">
-            <span style="margin-right: 10px; font-size: 0.9rem;">🌓 切換主題</span>
-            <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
-                <div class="slider round"></div>
-            </label>
-        </div>
-    </header>
+<div class="book-cover">
+  <div class="cover-overlay"></div>
+  <div class="cover-content">
+    <p class="cover-label">TRAVEL GUIDE 2026</p>
+    <h1>名古屋自由行</h1>
+    <p class="cover-sub">虎航直飛 ‧ 質感住宿 ‧ 深度慢遊</p>
+    <div class="cover-date">6.17 — 6.21</div>
+    <div class="cover-updated">最後更新：2026年05月18日 01時13分</div>
+  </div>
+  <div class="scroll-hint">↓ 開始閱讀</div>
+</div>
 
-    <div class="container">
-        <!-- 基本資訊 -->
-        <div class="info-card">
-            <h2>✈️ 行程基本資訊</h2>
-            <ul>
-                <li><strong>旅行日期：</strong> <div>2026年6月17日 (三) ~ 6月21日 (日)</div></li>
-                <li><strong>航空公司：</strong> <div>台灣虎航 (Tigerair Taiwan) <br><small style="display: inline-block; margin-top: 4px;">💡 去程早去，回程午/晚回為佳。隨身行李享 10 公斤兩件優勢，適合購物！</small></div></li>
-                <li><strong>住宿方案：</strong>
-                    <div>
-                        選項 1：名古屋京阪飯店 (Hotel Keihan Nagoya) - 榮區<br>
-                        選項 2：名古屋伏見安住睦世酒店 (hotel androoms Nagoya Fushimi) - 伏見區<br>
-                        <small style="display: inline-block; margin-top: 4px;">💡 兩者皆為高質感、交通便利的飯店，從中部機場搭乘名鐵巴士或地鐵皆可輕鬆抵達。</small>
-                    </div>
-                </li>
-            </ul>
-        </div>
+<nav class="toc">
+  <div class="toc-inner">
+    <button class="toc-btn active" onclick="openTab(this,&apos;tab-5days&apos;)">5天4夜 悠閒版</button>
+    <button class="toc-btn" onclick="openTab(this,&apos;tab-4days&apos;)">4天3夜 精華版</button>
+    <button class="toc-btn" onclick="openTab(this,&apos;tab-budget&apos;)">💰 預算估算</button>
+    <button class="toc-btn" onclick="openTab(this,&apos;tab-tips&apos;)">💡 實用提示</button>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切換主題">🌓</button>
+  </div>
+</nav>
 
-        <!-- 頁籤切換 -->
-        <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('tab-5days')">5天4夜 悠閒版</button>
-            <button class="tab-btn" onclick="openTab('tab-4days')">4天3夜 精華版</button>
-            <button class="tab-btn" onclick="openTab('tab-budget')">💰 預算估算</button>
-            <button class="tab-btn" onclick="openTab('tab-tips')">💡 實用小提示</button>
-        </div>
+<main class="book-body">
 
-        <!-- 5天4夜 行程 -->
-        <div id="tab-5days" class="tab-content active">
-            <div class="day-card">
-                <div class="day-title"><span>Day 1</span> 抵達名古屋 ‧ 榮商圈初探 <span style="font-weight: normal; font-size: 0.9rem; margin-left: auto; color: var(--text-color); background: none;">☁️ 多雲 24°C</span></div>
-                <div class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1674923207459-98ed5a4dcd06?auto=format&fit=crop&w=400&q=80" alt="名古屋電視塔與綠洲21">
-                    <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=400&q=80" alt="炸雞翅 (示意圖)">
-                </div>
-                <div class="time-block">
-                    <h4>抵達與交通</h4>
-                    <p>搭乘虎航抵達中部國際機場 (NGO)。<br>
-                    搭乘「名鐵機場巴士」至榮/伏見區域下車，前往飯店 Check-in（或搭乘名鐵電車轉乘地鐵）。</p>
-                </div>
-                <div class="time-block">
-                    <h4>下午</h4>
-                    <p>前往飯店周邊商圈熟悉環境，若住榮區可逛久屋大通公園；若住伏見區可找間特色咖啡廳休息。</p>
-                </div>
-                <div class="time-block">
-                    <h4>晚上</h4>
-                    <p>晚餐享用名古屋必吃美食<strong>「手羽先 (炸雞翅)」</strong>（推薦：世界的山將 或 風來坊）。<br>
-                    飯後散步至綠洲 21 (Oasis 21) 欣賞宇宙船夜景與中部電力 MIRAI TOWER。</p>
-                </div>
-            </div>
+<section class="info-chapter">
+  <div class="chapter-header"><span class="ch-label">OVERVIEW</span><h2>行程基本資訊</h2></div>
+  <div class="info-grid">
+    <div class="info-item"><span class="info-icon">📅</span><div><strong>旅行日期</strong><p>2026年6月17日 (三) ~ 6月21日 (日)</p></div></div>
+    <div class="info-item"><span class="info-icon">✈️</span><div><strong>航空公司</strong><p>台灣虎航 (Tigerair Taiwan)<br><small>💡 去程早去，回程午/晚回為佳。隨身行李享 10 公斤兩件優勢，適合購物！</small></p></div></div>
+    <div class="info-item"><span class="info-icon">🏨</span><div><strong>住宿方案</strong><p>選項 1：名古屋京阪飯店 - 榮區<br>選項 2：名古屋伏見安住睦世酒店 - 伏見區<br><small>💡 兩者皆為高質感、交通便利的飯店。</small></p></div></div>
+  </div>
+</section>
 
-            <div class="day-card">
-                <div class="day-title"><span>Day 2</span> 歷史與現代工業的碰撞 <span style="font-weight: normal; font-size: 0.9rem; margin-left: auto; color: var(--text-color); background: none;">🌦️ 陰陣雨 25°C</span></div>
-                <div class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1580651315530-69c8e0026377?auto=format&fit=crop&w=400&q=80" alt="名古屋城">
-                    <img src="https://images.unsplash.com/photo-1617196034738-26c5f7c977ce?auto=format&fit=crop&w=400&q=80" alt="鰻魚飯 (示意圖)">
-                </div>
-                <div class="time-block">
-                    <h4>上午</h4>
-                    <p>參觀<strong>名古屋城</strong>與本丸御殿，欣賞壯觀的金鯱與華麗建築。<br>
-                    午餐可至一旁的「金鯱橫丁」品嚐名古屋特色小吃。</p>
-                </div>
-                <div class="time-block">
-                    <h4>下午</h4>
-                    <p>前往<strong>豐田產業技術紀念館</strong>。這裡展示從紡織機到現代汽車的演進，動態展示豐富，極具質感且不無聊！</p>
-                </div>
-                <div class="time-block">
-                    <h4>晚上</h4>
-                    <p>晚餐享用極致美味的<strong>「鰻魚飯三吃」</strong>（推薦：熱田蓬萊軒 或 まるや本店）。</p>
-                </div>
-            </div>
+<div id="tab-5days" class="tab-content active">
 
-            <div class="day-card">
-                <div class="day-title"><span>Day 3</span> 國寶古城與江戶風情 (近郊半日遊) <span style="font-weight: normal; font-size: 0.9rem; margin-left: auto; color: var(--text-color); background: none;">☀️ 晴天 28°C</span></div>
-                <div class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80" alt="傳統街道與神社">
-                    <img src="https://images.unsplash.com/photo-1629127524579-269c62b90a96?auto=format&fit=crop&w=400&q=80" alt="烏龍麵/拉麵 (示意圖)">
-                </div>
-                <div class="time-block">
-                    <h4>上午</h4>
-                    <p>搭乘名鐵前往犬山（車程約30分鐘）。參觀日本國寶<strong>犬山城</strong>，登上天守閣俯瞰木曾川美景。</p>
-                </div>
-                <div class="time-block">
-                    <h4>下午</h4>
-                    <p>漫步於<strong>犬山城下町</strong>。品嚐三色丸子、飛驒牛握壽司，並前往超靈驗的「三光稻荷神社」洗錢求財、求姻緣（粉紅愛心繪馬）。</p>
-                </div>
-                <div class="time-block">
-                    <h4>晚上</h4>
-                    <p>返回名古屋市區。晚餐可品嚐<strong>「味噌鍋燒烏龍麵」</strong>（推薦：山本屋總本家）或特有的<strong>「台灣拉麵」</strong>（推薦：味仙）。</p>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-title"><span>Day 4</span> 主題樂園或水族館放鬆日 <span style="font-weight: normal; font-size: 0.9rem; margin-left: auto; color: var(--text-color); background: none;">🌧️ 梅雨 23°C</span></div>
-                <div class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=400&q=80" alt="水族館">
-                    <img src="https://images.unsplash.com/photo-1542052125323-e69ad37a47c2?auto=format&fit=crop&w=400&q=80" alt="大須商店街購物 (示意圖)">
-                </div>
-                <div class="time-block">
-                    <h4>全天</h4>
-                    <p><strong>路線 A：吉卜力公園 (Ghibli Park)</strong><br>
-                    前往愛・地球博紀念公園，沉浸在宮崎駿的動畫世界。（⚠️ 需提前兩個月於官網搶票）<br>
-                    <strong>路線 B：名古屋港水族館</strong><br>
-                    欣賞震撼的虎鯨與海豚表演，參觀南極觀測船，療癒且放鬆的一天。</p>
-                </div>
-                <div class="time-block">
-                    <h4>下午/晚上 (動漫與購物)</h4>
-                    <p>前往榮區松坂屋百貨本館5樓朝聖<strong>「寶可夢中心 Nagoya (Pokémon Center Nagoya)」</strong>，購買當地限定周邊（如：穿著中日龍球衣的皮卡丘）。<br>
-                    隨後在榮商圈（唐吉訶德、大丸百貨）或大須商店街（營業至晚上 8 點）進行最後的伴手禮與藥妝大採買。</p>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-title"><span>Day 5</span> 體驗名古屋早餐文化 ‧ 滿載歸國 <span style="font-weight: normal; font-size: 0.9rem; margin-left: auto; color: var(--text-color); background: none;">⛅ 晴時多雲 26°C</span></div>
-                <div class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=400&q=80" alt="名古屋咖啡早餐">
-                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80" alt="機場準備回程">
-                </div>
-                <div class="time-block">
-                    <h4>上午</h4>
-                    <p>體驗名古屋特有的<strong>「Morning Service (點飲料送早餐)」</strong>文化（推薦：客美多咖啡 Komeda's 或 BUCYO Coffee）。</p>
-                </div>
-                <div class="time-block">
-                    <h4>中午至下午</h4>
-                    <p>退房後前往中部國際機場。機場的「提燈橫丁」和「煉瓦通」商店街非常好逛，甚至可至「風之浴」泡溫泉看飛機起降。<br>
-                    搭乘虎航平安返家。</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4天3夜 行程 -->
-        <div id="tab-4days" class="tab-content">
-            <div class="day-card">
-                <div class="day-title"><span>Day 1</span> 抵達名古屋 ‧ 榮商圈初探 <span style="font-weight: normal; font-size: 0.9rem; margin-left: auto; color: var(--text-color); background: none;">☁️ 多雲 24°C</span></div>
-                <div class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1674923207459-98ed5a4dcd06?auto=format&fit=crop&w=400&q=80" alt="名古屋電視塔與綠洲21">
-                    <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=400&q=80" alt="炸雞翅 (示意圖)">
-                </div>
-                <div class="time-block">
-                    <p>同 5 天 4 夜行程。<br>搭乘虎航抵達、飯店 Check-in，晚上品嚐手羽先、逛綠洲 21。</p>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-title"><span>Day 2</span> 經典必遊：名古屋城與豐田紀念館 <span style="font-weight: normal; font-size: 0.9rem; margin-left: auto; color: var(--text-color); background: none;">🌦️ 陰陣雨 25°C</span></div>
-                <div class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1580651315530-69c8e0026377?auto=format&fit=crop&w=400&q=80" alt="名古屋城">
-                    <img src="https://images.unsplash.com/photo-1617196034738-26c5f7c977ce?auto=format&fit=crop&w=400&q=80" alt="鰻魚飯 (示意圖)">
-                </div>
-                <div class="time-block">
-                    <p>同 5 天 4 夜行程。<br>上午名古屋城，下午豐田產業技術紀念館，晚餐品嚐鰻魚飯三吃。</p>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-title"><span>Day 3</span> 國寶古城與江戶風情 (近郊半日遊) <span style="font-weight: normal; font-size: 0.9rem; margin-left: auto; color: var(--text-color); background: none;">☀️ 晴天 28°C</span></div>
-                <div class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80" alt="傳統街道與神社">
-                    <img src="https://images.unsplash.com/photo-1629127524579-269c62b90a96?auto=format&fit=crop&w=400&q=80" alt="烏龍麵/拉麵 (示意圖)">
-                </div>
-                <div class="time-block">
-                    <p>上午前往<strong>犬山城</strong>與<strong>城下町</strong>半日遊。<br>
-                    下午返回市區，前往榮區的松坂屋朝聖<strong>「寶可夢中心 Nagoya」</strong>。<br>
-                    傍晚在榮商圈或<strong>大須商店街</strong>採買藥妝與伴手禮。<br>
-                    晚餐享用味噌鍋燒烏龍麵或台灣拉麵。</p>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-title"><span>Day 4</span> 名古屋早餐文化 ‧ 準備賦歸 <span style="font-weight: normal; font-size: 0.9rem; margin-left: auto; color: var(--text-color); background: none;">🌧️ 梅雨 23°C</span></div>
-                <div class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=400&q=80" alt="名古屋咖啡早餐">
-                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80" alt="機場準備回程">
-                </div>
-                <div class="time-block">
-                    <p>同 5 天 4 夜行程。<br>體驗點咖啡送吐司的早餐文化，提早前往中部國際機場採買並搭乘虎航返台。</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 預算估算 -->
-        <div id="tab-budget" class="tab-content">
-            <div class="info-card">
-                <h2>💰 名古屋 5天4夜 預算估算 (單人)</h2>
-                <p>此為以「高質感、舒適」為前提的預算估算，皆以台幣 (TWD) 計算：</p>
-                
-                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
-                    <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
-                        <th style="padding: 10px;">項目</th>
-                        <th style="padding: 10px;">預估金額 (TWD)</th>
-                        <th style="padding: 10px;">說明</th>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                        <td style="padding: 10px;"><strong>✈️ 虎航來回機票</strong></td>
-                        <td style="padding: 10px;">$8,000 - $11,000</td>
-                        <td style="padding: 10px;">含 20kg 託運行李 (建議回程買託運，去程可只帶 10kg 登機箱)</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                        <td style="padding: 10px;"><strong>🏨 住宿 (4晚)</strong></td>
-                        <td style="padding: 10px;">$6,000 - $8,000</td>
-                        <td style="padding: 10px;">以雙人房每晚 $3,000-$4,000 計算，單人分攤約 $1,500-$2,000/晚</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                        <td style="padding: 10px;"><strong>🚆 交通費</strong></td>
-                        <td style="padding: 10px;">$2,000 - $2,500</td>
-                        <td style="padding: 10px;">機場巴士來回、市區地鐵、犬山城來回車資</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                        <td style="padding: 10px;"><strong>🍣 飲食費 (5天)</strong></td>
-                        <td style="padding: 10px;">$6,000 - $8,000</td>
-                        <td style="padding: 10px;">含一餐高級鰻魚飯(約$1,000)、飛驒牛小吃、手羽先與日常拉麵</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border-color);">
-                        <td style="padding: 10px;"><strong>🎫 門票與娛樂</strong></td>
-                        <td style="padding: 10px;">$1,000 - $2,000</td>
-                        <td style="padding: 10px;">名古屋城、水族館/吉卜力公園、豐田紀念館等</td>
-                    </tr>
-                    <tr style="border-top: 2px solid var(--primary-color); background-color: rgba(224, 108, 117, 0.1);">
-                        <td style="padding: 10px;"><strong>🌟 總計 (不含購物)</strong></td>
-                        <td style="padding: 10px;"><strong>約 $23,000 - $31,500</strong></td>
-                        <td style="padding: 10px;">準備 $30,000 左右即可享受非常有質感的旅行！</td>
-                    </tr>
-                </table>
-                <p style="margin-top: 1rem;"><small>💡 購物/藥妝/寶可夢中心消費因人而異，建議另外抓 $5,000 - $10,000 以上的購物金。</small></p>
-            </div>
-        </div>
-
-        <!-- 實用小提示 -->
-        <div id="tab-tips" class="tab-content">
-            <div class="info-card">
-                <h2>💡 旅行實用小提示 (Tips)</h2>
-                <ul>
-                    <li style="display: block; margin-bottom: 1.5rem;"><strong style="display: block; margin-bottom: 0.3rem;">🎒 登機行李策略 (虎航)：</strong> <div style="color: var(--text-color);">虎航提供 10 公斤（最多 2 件）手提行李。去程時可以盡量把重量控制在 6-7 公斤，回程時，<strong>強烈建議事先加購託運行李</strong>，因為買了藥妝和伴手禮（尤其液體類）後，10 公斤很容易超重，且免稅品的袋子也會被算作一件行李。</div></li>
-                    <li style="display: block; margin-bottom: 1.5rem;"><strong style="display: block; margin-bottom: 0.3rem;">🚌 機場巴士注意事項：</strong> <div style="color: var(--text-color);">中部機場的「新特麗亞利木津巴士」往名古屋車站的路線目前停駛中！若要搭巴士免扛行李，請務必選擇住在<strong>「榮」</strong>或<strong>「伏見」</strong>的飯店（如本次推薦的京阪或 androoms）。巴士可使用 Suica/ICOCA 等 IC 卡直接感應上車。</div></li>
-                    <li style="display: block; margin-bottom: 1.5rem;"><strong style="display: block; margin-bottom: 0.3rem;">💳 交通卡與支付：</strong> <div style="color: var(--text-color);">名古屋的交通非常方便，一張 iPhone 內建的 Suica 或實體 ICOCA/manaca 即可搭乘所有地鐵與名鐵。現在大部分餐廳和商店都支援 Apple Pay 或信用卡，現金不需帶太多，主要用於小吃攤或儲值交通卡。</div></li>
-                    <li style="display: block; margin-bottom: 1.5rem;"><strong style="display: block; margin-bottom: 0.3rem;">🛒 免稅與購物：</strong> <div style="color: var(--text-color);">在日本購物滿 5,000 日圓即可免稅。在榮商圈的大丸、松坂屋（寶可夢中心所在）購物時，記得隨身攜帶<strong>實體護照</strong>。大須商店街則是挖寶二手衣物、平價小吃和次文化商品的好去處，營業時間大約到晚上 8 點，建議下午前往。</div></li>
-                    <li style="display: block; margin-bottom: 1.5rem;"><strong style="display: block; margin-bottom: 0.3rem;">🌧️ 雨天備案：</strong> <div style="color: var(--text-color);">6月份正是日本的梅雨季節。如果遇到下雨，可以多安排地下街行程（名古屋車站的地下街非常龐大），或是把水族館、豐田產業技術紀念館等室內景點移到雨天進行。</div></li>
-                </ul>
-            </div>
-        </div>
+<article class="day-chapter">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1674923207459-98ed5a4dcd06?auto=format&fit=crop&w=1200&q=80)">
+    <div class="day-hero-overlay"></div>
+    <div class="day-hero-text"><span class="day-num">01</span><h3>抵達名古屋 ‧ 榮商圈初探</h3><span class="day-weather">☁️ 多雲 24°C</span></div>
+  </div>
+  <div class="day-body">
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>抵達與交通</h4><p>搭乘虎航抵達中部國際機場 (NGO)。搭乘「名鐵機場巴士」至榮/伏見區域下車，前往飯店 Check-in。</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>下午</h4><p>前往飯店周邊商圈熟悉環境，若住榮區可逛久屋大通公園；若住伏見區可找間特色咖啡廳休息。</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>晚上</h4><p>晚餐享用名古屋必吃美食<strong>「手羽先 (炸雞翅)」</strong>（推薦：世界的山將 或 風來坊）。飯後散步至綠洲 21 欣賞宇宙船夜景與中部電力 MIRAI TOWER。</p></div></div>
     </div>
+  </div>
+</article>
 
-    <script>
-        // 切換頁籤
-        function openTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
+<article class="day-chapter">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1580651315530-69c8e0026377?auto=format&fit=crop&w=1200&q=80)">
+    <div class="day-hero-overlay"></div>
+    <div class="day-hero-text"><span class="day-num">02</span><h3>歷史與現代工業的碰撞</h3><span class="day-weather">🌦️ 陰陣雨 25°C</span></div>
+  </div>
+  <div class="day-body">
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>上午</h4><p>參觀<strong>名古屋城</strong>與本丸御殿，欣賞壯觀的金鯱與華麗建築。午餐可至一旁的「金鯱橫丁」品嚐名古屋特色小吃。</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>下午</h4><p>前往<strong>豐田產業技術紀念館</strong>。這裡展示從紡織機到現代汽車的演進，動態展示豐富，極具質感且不無聊！</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>晚上</h4><p>晚餐享用極致美味的<strong>「鰻魚飯三吃」</strong>（推薦：熱田蓬萊軒 或 まるや本店）。</p></div></div>
+    </div>
+  </div>
+</article>
 
-        // 深色模式切換
-        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-        const currentTheme = localStorage.getItem('theme');
+<article class="day-chapter">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80)">
+    <div class="day-hero-overlay"></div>
+    <div class="day-hero-text"><span class="day-num">03</span><h3>國寶古城與江戶風情</h3><span class="day-weather">☀️ 晴天 28°C</span></div>
+  </div>
+  <div class="day-body">
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>上午</h4><p>搭乘名鐵前往犬山（車程約30分鐘）。參觀日本國寶<strong>犬山城</strong>，登上天守閣俯瞰木曾川美景。</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>下午</h4><p>漫步於<strong>犬山城下町</strong>。品嚐三色丸子、飛驒牛握壽司，並前往超靈驗的「三光稻荷神社」洗錢求財、求姻緣。</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>晚上</h4><p>返回名古屋市區。晚餐可品嚐<strong>「味噌鍋燒烏龍麵」</strong>（推薦：山本屋總本家）或<strong>「台灣拉麵」</strong>（推薦：味仙）。</p></div></div>
+    </div>
+  </div>
+</article>
 
-        if (currentTheme) {
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            if (currentTheme === 'dark') {
-                toggleSwitch.checked = true;
-            }
-        }
+<article class="day-chapter">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=1200&q=80)">
+    <div class="day-hero-overlay"></div>
+    <div class="day-hero-text"><span class="day-num">04</span><h3>主題樂園或水族館放鬆日</h3><span class="day-weather">🌧️ 梅雨 23°C</span></div>
+  </div>
+  <div class="day-body">
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>全天</h4><p><strong>路線 A：吉卜力公園</strong> — 前往愛・地球博紀念公園，沉浸在宮崎駿的動畫世界。（⚠️ 需提前兩個月於官網搶票）<br><strong>路線 B：名古屋港水族館</strong> — 欣賞震撼的虎鯨與海豚表演，參觀南極觀測船。</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>下午/晚上</h4><p>前往榮區松坂屋百貨朝聖<strong>「寶可夢中心 Nagoya」</strong>，購買當地限定周邊。隨後在榮商圈或大須商店街進行伴手禮與藥妝大採買。</p></div></div>
+    </div>
+  </div>
+</article>
 
-        function switchTheme(e) {
-            if (e.target.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }
-        }
+<article class="day-chapter">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=80)">
+    <div class="day-hero-overlay"></div>
+    <div class="day-hero-text"><span class="day-num">05</span><h3>體驗早餐文化 ‧ 滿載歸國</h3><span class="day-weather">⛅ 晴時多雲 26°C</span></div>
+  </div>
+  <div class="day-body">
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>上午</h4><p>體驗名古屋特有的<strong>「Morning Service (點飲料送早餐)」</strong>文化（推薦：客美多咖啡 Komeda&apos;s 或 BUCYO Coffee）。</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>中午至下午</h4><p>退房後前往中部國際機場。機場的「提燈橫丁」和「煉瓦通」商店街非常好逛，甚至可至「風之浴」泡溫泉看飛機起降。搭乘虎航平安返家。</p></div></div>
+    </div>
+  </div>
+</article>
+</div>
 
-        toggleSwitch.addEventListener('change', switchTheme, false);
-    </script>
+<div id="tab-4days" class="tab-content">
+<article class="day-chapter compact">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1674923207459-98ed5a4dcd06?auto=format&fit=crop&w=1200&q=80)">
+    <div class="day-hero-overlay"></div>
+    <div class="day-hero-text"><span class="day-num">01</span><h3>抵達名古屋 ‧ 榮商圈初探</h3><span class="day-weather">☁️ 多雲 24°C</span></div>
+  </div>
+  <div class="day-body"><div class="timeline"><div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><p>同 5 天 4 夜行程。搭乘虎航抵達、飯店 Check-in，晚上品嚐手羽先、逛綠洲 21。</p></div></div></div></div>
+</article>
+<article class="day-chapter compact">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1580651315530-69c8e0026377?auto=format&fit=crop&w=1200&q=80)">
+    <div class="day-hero-overlay"></div>
+    <div class="day-hero-text"><span class="day-num">02</span><h3>經典必遊：名古屋城與豐田紀念館</h3><span class="day-weather">🌦️ 陰陣雨 25°C</span></div>
+  </div>
+  <div class="day-body"><div class="timeline"><div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><p>同 5 天 4 夜行程。上午名古屋城，下午豐田產業技術紀念館，晚餐品嚐鰻魚飯三吃。</p></div></div></div></div>
+</article>
+<article class="day-chapter compact">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80)">
+    <div class="day-hero-overlay"></div>
+    <div class="day-hero-text"><span class="day-num">03</span><h3>國寶古城與江戶風情</h3><span class="day-weather">☀️ 晴天 28°C</span></div>
+  </div>
+  <div class="day-body"><div class="timeline"><div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><p>上午前往<strong>犬山城</strong>與<strong>城下町</strong>半日遊。下午返回市區，朝聖<strong>「寶可夢中心 Nagoya」</strong>。傍晚在榮商圈或大須商店街採買。晚餐享用味噌鍋燒烏龍麵或台灣拉麵。</p></div></div></div></div>
+</article>
+<article class="day-chapter compact">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=80)">
+    <div class="day-hero-overlay"></div>
+    <div class="day-hero-text"><span class="day-num">04</span><h3>名古屋早餐文化 ‧ 準備賦歸</h3><span class="day-weather">🌧️ 梅雨 23°C</span></div>
+  </div>
+  <div class="day-body"><div class="timeline"><div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><p>同 5 天 4 夜行程。體驗點咖啡送吐司的早餐文化，提早前往中部國際機場採買並搭乘虎航返台。</p></div></div></div></div>
+</article>
+</div>
+
+<div id="tab-budget" class="tab-content">
+<section class="budget-chapter">
+  <div class="chapter-header"><span class="ch-label">BUDGET</span><h2>名古屋 5天4夜 預算估算 (單人)</h2></div>
+  <p class="budget-intro">此為以「高質感、舒適」為前提的預算估算，皆以台幣 (TWD) 計算：</p>
+  <div class="budget-grid">
+    <div class="budget-card"><div class="budget-icon">✈️</div><h4>虎航來回機票</h4><div class="budget-amount">$8,000 - $11,000</div><p>含 20kg 託運行李</p></div>
+    <div class="budget-card"><div class="budget-icon">🏨</div><h4>住宿 (4晚)</h4><div class="budget-amount">$6,000 - $8,000</div><p>雙人房分攤約 $1,500-$2,000/晚</p></div>
+    <div class="budget-card"><div class="budget-icon">🚆</div><h4>交通費</h4><div class="budget-amount">$2,000 - $2,500</div><p>機場巴士、市區地鐵、犬山來回</p></div>
+    <div class="budget-card"><div class="budget-icon">🍣</div><h4>飲食費 (5天)</h4><div class="budget-amount">$6,000 - $8,000</div><p>含鰻魚飯、飛驒牛、手羽先等</p></div>
+    <div class="budget-card"><div class="budget-icon">🎫</div><h4>門票與娛樂</h4><div class="budget-amount">$1,000 - $2,000</div><p>名古屋城、水族館、豐田紀念館等</p></div>
+    <div class="budget-card total"><div class="budget-icon">🌟</div><h4>總計 (不含購物)</h4><div class="budget-amount">約 $23,000 - $31,500</div><p>準備 $30,000 左右即可享受非常有質感的旅行！</p></div>
+  </div>
+  <p class="budget-note">💡 購物/藥妝/寶可夢中心消費因人而異，建議另外抓 $5,000 - $10,000 以上的購物金。</p>
+</section>
+</div>
+
+<div id="tab-tips" class="tab-content">
+<section class="tips-chapter">
+  <div class="chapter-header"><span class="ch-label">TIPS</span><h2>旅行實用小提示</h2></div>
+  <div class="tips-grid">
+    <div class="tip-card"><div class="tip-icon">🎒</div><h4>登機行李策略</h4><p>虎航提供 10 公斤（最多 2 件）手提行李。去程控制在 6-7 公斤，<strong>回程強烈建議加購託運行李</strong>，藥妝和伴手禮很容易超重。</p></div>
+    <div class="tip-card"><div class="tip-icon">🚌</div><h4>機場巴士注意</h4><p>利木津巴士往名古屋車站路線目前停駛中！請選擇住在<strong>「榮」</strong>或<strong>「伏見」</strong>的飯店。巴士可使用 Suica/ICOCA 等 IC 卡。</p></div>
+    <div class="tip-card"><div class="tip-icon">💳</div><h4>交通卡與支付</h4><p>一張 iPhone 內建的 Suica 即可搭乘所有地鐵與名鐵。大部分商店支援 Apple Pay 或信用卡，現金不需帶太多。</p></div>
+    <div class="tip-card"><div class="tip-icon">🛒</div><h4>免稅與購物</h4><p>購物滿 5,000 日圓即可免稅，記得攜帶<strong>實體護照</strong>。大須商店街營業至晚上 8 點，建議下午前往。</p></div>
+    <div class="tip-card"><div class="tip-icon">🌧️</div><h4>雨天備案</h4><p>6月梅雨季，下雨時可安排地下街行程（名古屋車站地下街非常龐大），或安排水族館、豐田紀念館等室內景點。</p></div>
+  </div>
+</section>
+</div>
+
+</main>
+
+<footer class="book-footer">
+  <p>2026 名古屋自由行 — Made with ❤️</p>
+</footer>
+
+<script>
+function openTab(btn, tabId) {
+  document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
+  document.querySelectorAll(".toc-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById(tabId).classList.add("active");
+  btn.classList.add("active");
+}
+function toggleTheme() {
+  const d = document.documentElement;
+  const t = d.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  d.setAttribute("data-theme", t);
+  localStorage.setItem("theme", t);
+}
+(function(){
+  const t = localStorage.getItem("theme");
+  if(t) document.documentElement.setAttribute("data-theme", t);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("visible"); });
+  }, {threshold: 0.1});
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".day-chapter, .info-item, .budget-card, .tip-card").forEach(el => observer.observe(el));
+  });
+})();
+</script>
 </body>
 </html>
