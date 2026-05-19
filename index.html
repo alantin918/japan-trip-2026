@@ -142,6 +142,14 @@
 </div>
 
 <div id="tab-reco" class="tab-content">
+
+<div class="mini-tabs" style="justify-content:center; margin-bottom:0.5rem;">
+  <button class="mini-tab-btn active" onclick="openMiniTab(this, 'reco-food', 'reco-sub')">🍜 美食</button>
+  <button class="mini-tab-btn" onclick="openMiniTab(this, 'reco-spots', 'reco-sub')">📍 景點</button>
+  <button class="mini-tab-btn" onclick="openMiniTab(this, 'reco-gifts', 'reco-sub')">🎁 伴手禮</button>
+</div>
+
+<div id="reco-food" class="mini-tab-content reco-sub-content active">
 <section class="reco-chapter">
   <div class="chapter-header"><span class="ch-label">GOURMET</span><h2>名古屋必吃美食推薦</h2></div>
   <div class="reco-grid">
@@ -157,7 +165,9 @@
     <div class="reco-card"><img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=600&q=80" alt="小倉吐司"><div class="reco-body"><h4>小倉紅豆吐司 (小倉トースト)</h4><p class="reco-where">📍 客美多咖啡 / 各喫茶店</p><p>烤得酥脆的厚片吐司塗上奶油和甜紅豆餡，甜鹹交織的名古屋經典早餐。搭配 Morning Service 點飲料就能免費享用！預算約 ¥0-400。</p></div></div>
   </div>
 </section>
+</div>
 
+<div id="reco-spots" class="mini-tab-content reco-sub-content">
 <section class="reco-chapter">
   <div class="chapter-header"><span class="ch-label">SPOTS</span><h2>推薦景點精選</h2></div>
   <div class="reco-grid">
@@ -173,7 +183,9 @@
     <div class="reco-card"><img src="https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=600&q=80" alt="寶可夢中心"><div class="reco-body"><h4>寶可夢中心 Nagoya</h4><p class="reco-where">📍 榮區 松坂屋百貨本館 5F</p><p>名古屋限定的穿金鴱裝皮卡丘、中日龍球衣皮卡丘等外地買不到！各種文具、零食和玩偶應有盡有，寶可夢迷必訪。免費入場。</p></div></div>
   </div>
 </section>
+</div>
 
+<div id="reco-gifts" class="mini-tab-content reco-sub-content">
 <section class="reco-chapter">
   <div class="chapter-header"><span class="ch-label">SOUVENIRS</span><h2>推薦伴手禮必買</h2></div>
   <div class="reco-grid">
@@ -189,6 +201,7 @@
     <div class="reco-card"><img src="images/gift_airport.png" alt="中部機場限定"><div class="reco-body"><h4>中部機場限定商品</h4><p class="reco-where">📍 中部國際機場 「提燈橫丁」</p><p>機場內的「提燈橫丁」和「煉瓦通」商店街非常好逛！有許多機場限定的包裝和口味，最後一站補貨的好機會。價格不等。</p></div></div>
   </div>
 </section>
+</div>
 </div>
 
 <div id="tab-info" class="tab-content">
@@ -218,9 +231,13 @@
 </section>
 
 <section class="tips-chapter">
-  <div class="chapter-header"><span class="ch-label">MAP</span><h2>名古屋交通圖</h2></div>
+  <div class="chapter-header"><span class="ch-label">MAP</span><h2>名古屋地鐵路線圖 (官方)</h2></div>
   <div style="text-align: center; margin-top: 1.5rem;">
-    <img src="images/transit_map.png" alt="名古屋交通圖" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <iframe src="https://www.kotsu.city.nagoya.jp/jp/pc/Jassets/pdf/subway/rosenzu/subwaymap.pdf" style="width:100%; height:600px; border:none; border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" title="名古屋市交通局 地下鐵路線圖"></iframe>
+    <p style="margin-top:1rem; font-size:0.85rem; color:var(--text2);">
+      📄 無法顯示？<a href="https://www.kotsu.city.nagoya.jp/jp/pc/Jassets/pdf/subway/rosenzu/subwaymap.pdf" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:underline;">點此下載官方路線圖 PDF</a>
+      ｜ 🗺️ <a href="https://www.kotsu.city.nagoya.jp/jp/pc/route/" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:underline;">互動式乘換導航</a>
+    </p>
   </div>
 </section>
 </div>
