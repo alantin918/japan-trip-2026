@@ -44,7 +44,7 @@
   <div class="info-grid">
     <div class="info-item"><span class="info-icon">📅</span><div><strong>旅行日期</strong><p data-bind="dateRange"></p></div></div>
     <div class="info-item"><span class="info-icon">✈️</span><div><strong>航空公司</strong><p data-bind="airlineInfo"></p></div></div>
-    <div class="info-item"><span class="info-icon">🏨</span><div><strong>住宿方案</strong><p>難波 / 心齋橋 周邊飯店<br><span data-bind="nightsText">3晚</span><br><small>💡 交通樞紐，美食購物天堂，前往環球影城也方便。</small></p></div></div>
+    <div class="info-item"><span class="info-icon">🏨</span><div><strong>住宿方案</strong><p>難波 / 心齋橋 周邊飯店<br><span data-bind="nightsText">3晚</span><br><small data-bind="hotelTip">💡 交通樞紐，美食購物天堂，隨時開吃。</small></p></div></div>
   </div>
 </section>
 <article class="day-chapter">
@@ -244,6 +244,7 @@ const TRIP_CONFIG = {
   slogan: '天下廚房 ‧ 歷史名城 ‧ 港灣夜景',
   airline: '樂桃航空 (Peach Aviation)',
   airlineTip: '💡 去程：6/18 桃園→關西機場\n💡 回程：6/21 關西機場→桃園',
+  hotelTip: '💡 交通樞紐，美食購物天堂，隨時開吃。',
   lastUpdated: '2026年05月20日 15時30分',
 };
 function applyConfig() {
@@ -256,6 +257,7 @@ function applyConfig() {
     airlineInfo: `${C.airline}\n${C.airlineTip}`,
     lastUpdated: `最後更新：${C.lastUpdated}`,
     nightsText: `${C.totalNights}晚`,
+    hotelTip: C.hotelTip,
   };
   document.querySelectorAll('[data-bind]').forEach(el => {
     const key = el.getAttribute('data-bind');
@@ -298,6 +300,7 @@ function switchTrip(type) {
     TRIP_CONFIG.totalDays = 5;
     TRIP_CONFIG.totalNights = 4;
     TRIP_CONFIG.airlineTip = '💡 去程：6/17 桃園→關西機場\\n💡 回程：6/21 關西機場→桃園';
+    TRIP_CONFIG.hotelTip = '💡 交通樞紐，前往京都一日遊搭乘京阪電車也很方便。';
   } else {
     document.getElementById('itinerary-5days').style.display = 'none';
     document.getElementById('itinerary-4days').style.display = 'block';
@@ -308,6 +311,7 @@ function switchTrip(type) {
     TRIP_CONFIG.totalDays = 4;
     TRIP_CONFIG.totalNights = 3;
     TRIP_CONFIG.airlineTip = '💡 去程：6/18 桃園→關西機場\\n💡 回程：6/21 關西機場→桃園';
+    TRIP_CONFIG.hotelTip = '💡 交通樞紐，美食購物天堂，隨時開吃。';
   }
   
   applyConfig();
