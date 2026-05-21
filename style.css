@@ -218,6 +218,35 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 .tip-card p { font-size:0.88rem; color:var(--text2); }
 .tip-card strong { color:var(--text); }
 
+/* Day reference section (nearby spots/shops, non-itinerary) */
+.ref-section {
+  padding: 1.5rem 2rem 2rem;
+  border-top: 1px dashed var(--border);
+  margin-top: 0.5rem;
+}
+.ref-title {
+  font-family: var(--serif); font-size: 0.95rem; color: var(--text2);
+  margin-bottom: 1rem; letter-spacing: 0.03em;
+}
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.8rem;
+}
+.ref-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 0.9rem 1rem;
+}
+.ref-card .ref-area {
+  font-size: 0.72rem; color: var(--gold); margin-bottom: 0.3rem; font-weight: 600;
+}
+.ref-card strong { font-size: 0.9rem; color: var(--text); display: block; margin-bottom: 0.25rem; }
+.ref-card p { font-size: 0.82rem; color: var(--text2); margin: 0; }
+@media(max-width:640px) {
+  .ref-grid { grid-template-columns: 1fr 1fr; }
+  .ref-section { padding: 1.2rem 1.2rem 1.5rem; }
+}
+
 /* Recommendation cards (food, spots, gifts) */
 .reco-chapter { padding-bottom:2rem; }
 .reco-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.2rem; }
