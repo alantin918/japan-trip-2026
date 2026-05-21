@@ -374,13 +374,16 @@
 </div>
 <div id="tab-usj" class="tab-content">
 <section class="tips-chapter">
-  <div class="chapter-header"><span class="ch-label">USJ</span><h2>6/19（五）環球影城 全日實戰動線</h2></div>
-  <p class="budget-intro">Express Pass 4 in 1 攻略，最大化遊玩效率 🎯</p>
+  <div class="usj-hero">
+    <div class="usj-hero-badge">EXPRESS PASS 4 · 6/19（五）</div>
+    <h2>🎢 環球影城 全日實戰動線</h2>
+    <p>最大化遊玩效率，蘑菇咖啡廳 · 任天堂世界 · 咚奇剛國度</p>
+  </div>
 
-  <div class="usj-phase">
+  <div class="usj-phase" data-p="1">
     <div class="usj-phase-header">
       <span class="usj-phase-label">第一階段</span>
-      <h3>🚀 開園盲衝黃金期　08:15 – 11:30</h3>
+      <h3>🚀 開園盲衝黃金期　08:10 – 11:30</h3>
     </div>
     <div class="timeline" style="margin-top:1rem;">
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>08:10 抵達門口排隊</h4><p>開園前 30 分鐘到場佔位，等待入場。<strong>不要在大門口拍照</strong>！入場後四人直接大步往任天堂世界方向衝。</p></div></div>
@@ -390,7 +393,7 @@
     </div>
   </div>
 
-  <div class="usj-phase">
+  <div class="usj-phase" data-p="2">
     <div class="usj-phase-header">
       <span class="usj-phase-label">第二階段</span>
       <h3>🍄 蘑菇咖啡廳用餐　搶到的時段為準</h3>
@@ -401,7 +404,7 @@
     </div>
   </div>
 
-  <div class="usj-phase">
+  <div class="usj-phase" data-p="3">
     <div class="usj-phase-header">
       <span class="usj-phase-label">第三階段</span>
       <h3>🦈 消化快通無指定設施　14:00 – 16:45</h3>
@@ -413,7 +416,7 @@
     </div>
   </div>
 
-  <div class="usj-phase">
+  <div class="usj-phase" data-p="4">
     <div class="usj-phase-header">
       <span class="usj-phase-label">第四階段</span>
       <h3>🍄 重頭戲！任天堂世界與咚奇剛　17:00 – 20:00 閉園</h3>
@@ -435,8 +438,7 @@
   <div style="margin-top:2rem;">
     <div class="chapter-header"><span class="ch-label">MAP</span><h2>環球影城 園區地圖</h2></div>
     <div style="text-align:center; margin-top:1.5rem;">
-      <a href="https://www.usj.co.jp/web/zh/tw/service-guide/parkmap" target="_blank" rel="noopener"
-         style="display:inline-block; background:var(--accent); color:#fff; padding:0.8rem 2rem; border-radius:30px; font-weight:700; text-decoration:none; font-size:0.95rem;">
+      <a href="https://www.usj.co.jp/web/zh/tw/service-guide/parkmap" target="_blank" rel="noopener" class="usj-map-btn">
         🗺️ 開啟官方園區地圖（繁體中文）
       </a>
       <p style="margin-top:1rem; font-size:0.85rem; color:var(--text2);">
@@ -481,7 +483,7 @@ function applyConfig() {
     totalNights: C.totalNights,
     slogan: C.slogan,
     airlineInfo: `${C.airline}\n${C.airlineTip}`,
-    lastUpdated: `目前行程：${C.tripLabel} ｜ 最後更新：2026/05/22 00:38（USJ 攻略：小小兵快通、購物延長、新增地圖連結）`,
+    lastUpdated: `目前行程：${C.tripLabel} ｜ 最後更新：2026/05/22 01:25（USJ 分頁 UI 重設計＋品牌色更新）`,
     nightsText: `${C.totalNights}晚`,
     hotelTip: C.hotelTip,
   };
