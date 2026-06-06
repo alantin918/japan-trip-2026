@@ -23,6 +23,7 @@
     <button class="toc-btn active" onclick="openTab(this,'tab-4days')">📅 行程</button>
     <button class="toc-btn" onclick="openTab(this,'tab-reco')">🎯 推薦指南</button>
     <button class="toc-btn" onclick="openTab(this,'tab-usj')">🎢 USJ 攻略</button>
+    <button class="toc-btn" onclick="openTab(this,'tab-usjmap')">🗺️ USJ 地圖</button>
     <button class="toc-btn" onclick="openTab(this,'tab-luggage')">🧳 行李＆提示</button>
     <button class="toc-btn" onclick="openTab(this,'tab-info')">💡 實用資訊</button>
     <select class="city-switcher" onchange="window.location.href=this.value" aria-label="切換城市">
@@ -459,6 +460,19 @@
     <div class="timeline" style="margin-top:1rem;">
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>依預約時段入座 キノピオカフェ</h4><p>在任天堂世界內的主題餐廳享用 Mario 主題餐點，這頓飯就是今日的正餐。時段由掃碼結果決定，前後活動配合調整。</p></div></div>
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>用餐後至 13:30 悠閒在任天堂世界 / DK 國度</h4><p>飯後在任天堂世界與咚奇剛國度繞一圈，拍照休息補能。商品先看好位置，<strong>統一留到下午購物退稅</strong>，不用提早拎大包。</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content">
+        <h4>13:00 💦 水世界 ウォーターワールド 表演（約 20 分鐘）</h4>
+        <p>午飯後精神最好，13:00 這場接得最順！從任天堂世界步行約 5 分鐘抵達，表演完剛好銜接 14:00 遊行。</p>
+        <div style="margin:0.6rem 0 0.2rem; background:rgba(0,136,204,0.07); border-radius:8px; padding:0.6rem 0.9rem; font-size:0.82rem;">
+          <strong style="color:#0088cc;">🕐 平日場次（6/19 週五）</strong>
+          <span style="display:inline-flex; gap:0.5rem; margin-left:0.6rem; flex-wrap:wrap;">
+            <span style="background:#e0e0e0; color:#555; border-radius:20px; padding:0.15rem 0.7rem;">11:00</span>
+            <span style="background:#0088cc; color:#fff; border-radius:20px; padding:0.15rem 0.7rem;">13:00 ⭐ 推薦</span>
+            <span style="background:#e0e0e0; color:#555; border-radius:20px; padding:0.15rem 0.7rem;">15:00</span>
+          </span>
+        </div>
+        <p style="font-size:0.82rem; color:var(--text2); margin-top:0.5rem;">⚠️ <strong>前 5 排必淋濕</strong>，帶雨衣或選中後排。提前 15 分鐘入座。當天以 USJ 官方 App 場次為準。</p>
+      </div></div>
     </div>
   </div>
 
@@ -537,6 +551,136 @@
       </p>
     </div>
   </div>
+</section>
+</div>
+
+<div id="tab-usjmap" class="tab-content">
+<section class="tips-chapter">
+  <div class="usj-hero" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);">
+    <div class="usj-hero-badge">6/19 週五</div>
+    <h2>🗺️ 環球影城 園區地圖</h2>
+    <p>各設施位置・場次時間・快通資訊一覽</p>
+  </div>
+
+  <!-- 圖例 -->
+  <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin:1rem 0 1.5rem; font-size:0.78rem;">
+    <span style="display:flex;align-items:center;gap:0.3rem;"><span style="width:10px;height:10px;border-radius:50%;background:#E4002B;display:inline-block;"></span>Express Pass 設施</span>
+    <span style="display:flex;align-items:center;gap:0.3rem;"><span style="width:10px;height:10px;border-radius:50%;background:#0088cc;display:inline-block;"></span>定時表演 SHOW</span>
+    <span style="display:flex;align-items:center;gap:0.3rem;"><span style="width:10px;height:10px;border-radius:50%;background:#43A047;display:inline-block;"></span>通用券可用</span>
+    <span style="display:flex;align-items:center;gap:0.3rem;">💧 濕身設施</span>
+  </div>
+
+  <!-- 園區地圖網格 -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.8rem;">
+
+    <!-- 任天堂世界 -->
+    <div style="grid-column:1/-1; background:linear-gradient(135deg,#e8f5e9,#c8e6c9); border-radius:14px; padding:1rem; border:2px solid #43A047;">
+      <div style="font-weight:800; font-size:0.95rem; color:#2e7d32; margin-bottom:0.7rem;">🍄 超級任天堂世界 ＋ 咚奇剛國度</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+          <div style="font-size:0.82rem; font-weight:700;">🔴 瑪利歐賽車：庫巴的挑戰書™</div>
+          <div style="font-size:0.75rem; color:#555; margin-top:0.2rem;">Express Pass ✅　排隊 60–120 分</div>
+        </div>
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+          <div style="font-size:0.82rem; font-weight:700;">🔴 咚奇剛國度：瘋狂礦車™</div>
+          <div style="font-size:0.75rem; color:#555; margin-top:0.2rem;">Express Pass ✅　天候敏感設施</div>
+        </div>
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+          <div style="font-size:0.82rem; font-weight:700;">🟢 ヨッシー・アドベンチャー</div>
+          <div style="font-size:0.75rem; color:#555; margin-top:0.2rem;">通用券可用　早上幾乎無人排</div>
+        </div>
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+          <div style="font-size:0.82rem; font-weight:700;">🍽️ キノピオカフェ（蘑菇咖啡廳）</div>
+          <div style="font-size:0.75rem; color:#e65100; margin-top:0.2rem;">⚡ 入園後第一件事掃碼搶位！</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 哈利波特 -->
+    <div style="background:linear-gradient(135deg,#f3e5f5,#e1bee7); border-radius:14px; padding:1rem; border:2px solid #8e24aa;">
+      <div style="font-weight:800; font-size:0.9rem; color:#6a1b9a; margin-bottom:0.7rem;">⚡ 哈利波特魔法世界</div>
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+          <div style="font-size:0.82rem; font-weight:700;">🔴 禁忌之旅™</div>
+          <div style="font-size:0.75rem; color:#555; margin-top:0.2rem;">Express Pass ✅　下午排隊 60–90 分</div>
+        </div>
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+          <div style="font-size:0.82rem; font-weight:700;">🦉 鷹馬飛行</div>
+          <div style="font-size:0.75rem; color:#555; margin-top:0.2rem;">通用券備案用　城堡旁夜景美</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 水世界 + 侏羅紀 -->
+    <div style="background:linear-gradient(135deg,#e3f2fd,#bbdefb); border-radius:14px; padding:1rem; border:2px solid #0088cc;">
+      <div style="font-weight:800; font-size:0.9rem; color:#01579b; margin-bottom:0.7rem;">💦 水世界 ＆ 侏羅紀公園</div>
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem; border-left:3px solid #0088cc;">
+          <div style="font-size:0.82rem; font-weight:700;">🔵 水世界 ウォーターワールド　<span style="background:#0088cc;color:#fff;font-size:0.7rem;border-radius:4px;padding:0.1rem 0.4rem;">SHOW</span></div>
+          <div style="margin-top:0.4rem; display:flex; gap:0.4rem; flex-wrap:wrap;">
+            <span style="background:#e0e0e0;color:#555;border-radius:12px;padding:0.1rem 0.55rem;font-size:0.75rem;">11:00</span>
+            <span style="background:#0088cc;color:#fff;border-radius:12px;padding:0.1rem 0.55rem;font-size:0.75rem;font-weight:700;">13:00 ⭐</span>
+            <span style="background:#e0e0e0;color:#555;border-radius:12px;padding:0.1rem 0.55rem;font-size:0.75rem;">15:00</span>
+          </div>
+          <div style="font-size:0.72rem; color:#888; margin-top:0.3rem;">平日3場・約20分・前排必濕 💧</div>
+        </div>
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+          <div style="font-size:0.82rem; font-weight:700;">💧 侏羅紀公園水上遊</div>
+          <div style="font-size:0.75rem; color:#555; margin-top:0.2rem;">全身濕 💧　6/19 確認開放</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 小小兵 + 好萊塢 -->
+    <div style="background:linear-gradient(135deg,#fffde7,#fff9c4); border-radius:14px; padding:1rem; border:2px solid #f9a825;">
+      <div style="font-weight:800; font-size:0.9rem; color:#e65100; margin-bottom:0.7rem;">👾 小小兵樂園 ＆ 好萊塢</div>
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+          <div style="font-size:0.82rem; font-weight:700;">🟢 小小兵瘋狂乘車遊</div>
+          <div style="font-size:0.75rem; color:#555; margin-top:0.2rem;">通用券可用 ✅　早上人少</div>
+        </div>
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem; border-left:3px solid #0088cc;">
+          <div style="font-size:0.82rem; font-weight:700;">🎉 25週年遊行　<span style="background:#0088cc;color:#fff;font-size:0.7rem;border-radius:4px;padding:0.1rem 0.4rem;">SHOW</span></div>
+          <div style="margin-top:0.35rem;">
+            <span style="background:#0088cc;color:#fff;border-radius:12px;padding:0.1rem 0.55rem;font-size:0.75rem;font-weight:700;">14:00 ⭐</span>
+          </div>
+          <div style="font-size:0.72rem; color:#888; margin-top:0.3rem;">好萊塢大道・約40分・站旁邊看即可</div>
+        </div>
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+          <div style="font-size:0.82rem; font-weight:700;">🎢 好萊塢美夢乘車遊（正 / 逆）</div>
+          <div style="font-size:0.75rem; color:#555; margin-top:0.2rem;">通用券備案用　夜間氣氛最佳</div>
+        </div>
+        <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+          <div style="font-size:0.82rem; font-weight:700;">🦅 飛天翼龍</div>
+          <div style="font-size:0.75rem; color:#555; margin-top:0.2rem;">通用券備案用　任天堂世界旁</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end grid -->
+
+  <!-- 今日 SHOW 場次總整理 -->
+  <div style="margin-top:1.5rem; background:linear-gradient(135deg,#e8eaf6,#c5cae9); border-radius:14px; padding:1rem 1.2rem; border:2px solid #3949ab;">
+    <div style="font-weight:800; font-size:0.95rem; color:#1a237e; margin-bottom:0.8rem;">🕐 6/19（週五）表演場次一覽</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem;">
+      <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+        <div style="font-size:0.8rem; font-weight:700; color:#0088cc; margin-bottom:0.4rem;">💦 水世界</div>
+        <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
+          <span style="background:#e0e0e0;color:#555;border-radius:10px;padding:0.1rem 0.5rem;font-size:0.75rem;">11:00</span>
+          <span style="background:#0088cc;color:#fff;border-radius:10px;padding:0.1rem 0.5rem;font-size:0.75rem;font-weight:700;">13:00 ★</span>
+          <span style="background:#e0e0e0;color:#555;border-radius:10px;padding:0.1rem 0.5rem;font-size:0.75rem;">15:00</span>
+        </div>
+      </div>
+      <div style="background:#fff; border-radius:10px; padding:0.6rem 0.8rem;">
+        <div style="font-size:0.8rem; font-weight:700; color:#0088cc; margin-bottom:0.4rem;">🎉 25週年遊行</div>
+        <div style="display:flex; gap:0.4rem;">
+          <span style="background:#0088cc;color:#fff;border-radius:10px;padding:0.1rem 0.5rem;font-size:0.75rem;font-weight:700;">14:00 ★</span>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:0.75rem; color:#666; margin-top:0.7rem; margin-bottom:0;">⚠️ 場次以當日 USJ 官方 App 為準，建議入園後立即確認</p>
+  </div>
+
 </section>
 </div>
 
