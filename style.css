@@ -243,7 +243,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 .ref-card strong { font-size: 0.9rem; color: var(--text); display: block; margin-bottom: 0.25rem; }
 .ref-card p { font-size: 0.82rem; color: var(--text2); margin: 0; }
 @media(max-width:640px) {
-  .ref-grid { grid-template-columns: 1fr 1fr; }
+  .ref-grid { grid-template-columns: 1fr; }
   .ref-section { padding: 1.2rem 1.2rem 1.5rem; }
 }
 
@@ -590,5 +590,63 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 }
 [data-theme="dark"] .usj-time-badge-gray {
   background: rgba(255, 255, 255, 0.12); color: #B0B0B0;
+}
+
+/* ==========================================================================
+   ☔ 雨天模式與響應式修復樣式
+   ========================================================================== */
+
+/* 1. 隔離雨天卡片內的 strong 強制換行問題 */
+.rain-card strong {
+  display: inline !important;
+  color: var(--text);
+  margin-bottom: 0;
+}
+
+/* 2. 全雨天備援池卡片樣式 */
+.rain-pool-card {
+  grid-column: 1 / -1;
+  background: rgba(99, 102, 241, 0.05) !important;
+  border: 1px solid rgba(99, 102, 241, 0.18) !important;
+}
+[data-theme="dark"] .rain-pool-card {
+  background: rgba(129, 140, 248, 0.1) !important;
+  border-color: rgba(129, 140, 248, 0.25) !important;
+}
+
+/* 3. 全雨天備援池條列清單 */
+.rain-pool-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.5rem 1rem;
+}
+.rain-pool-list li {
+  font-size: 0.84rem;
+  color: var(--text2);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  line-height: 1.5;
+}
+.rain-pool-list li strong {
+  display: inline !important;
+  color: var(--text);
+}
+.pool-num {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+
+/* 4. 雨天影響標示換行 */
+.rain-card h4 span.rain-impact {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text2);
+  margin-top: 0.25rem;
 }
 
