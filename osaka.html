@@ -470,6 +470,16 @@
     <p>最大化遊玩效率，蘑菇咖啡廳 · 任天堂世界 · 咚奇剛國度</p>
   </div>
 
+  <div style="display:flex; flex-wrap:wrap; gap:0.4rem; justify-content:center; margin:1.2rem 0;">
+    <button onclick="document.getElementById('usj-p1').scrollIntoView({behavior:'smooth',block:'start'})" style="background:#43a047; color:#fff; border:none; padding:0.4rem 0.9rem; border-radius:20px; font-size:0.8rem; font-weight:700; cursor:pointer;">🏰 早上卡位</button>
+    <button onclick="document.getElementById('usj-p2').scrollIntoView({behavior:'smooth',block:'start'})" style="background:#0288d1; color:#fff; border:none; padding:0.4rem 0.9rem; border-radius:20px; font-size:0.8rem; font-weight:700; cursor:pointer;">🍄 蘑菇用餐</button>
+    <button onclick="document.getElementById('usj-p3').scrollIntoView({behavior:'smooth',block:'start'})" style="background:#e91e63; color:#fff; border:none; padding:0.4rem 0.9rem; border-radius:20px; font-size:0.8rem; font-weight:700; cursor:pointer;">🎉 遊行購物</button>
+    <button onclick="document.getElementById('usj-p4').scrollIntoView({behavior:'smooth',block:'start'})" style="background:#f9a825; color:#fff; border:none; padding:0.4rem 0.9rem; border-radius:20px; font-size:0.8rem; font-weight:700; cursor:pointer;">🌃 任天堂夜場</button>
+    <button onclick="document.getElementById('usj-menu').scrollIntoView({behavior:'smooth',block:'start'})" style="background:#6d4c41; color:#fff; border:none; padding:0.4rem 0.9rem; border-radius:20px; font-size:0.8rem; font-weight:700; cursor:pointer;">📋 菜單</button>
+    <button onclick="document.getElementById('usj-food').scrollIntoView({behavior:'smooth',block:'start'})" style="background:#ef6c00; color:#fff; border:none; padding:0.4rem 0.9rem; border-radius:20px; font-size:0.8rem; font-weight:700; cursor:pointer;">🍗 美食</button>
+    <button onclick="document.getElementById('usj-map').scrollIntoView({behavior:'smooth',block:'start'})" style="background:#3949ab; color:#fff; border:none; padding:0.4rem 0.9rem; border-radius:20px; font-size:0.8rem; font-weight:700; cursor:pointer;">🗺️ 地圖</button>
+  </div>
+
   <!-- 今日動線流程圖 -->
   <div style="margin:1.5rem 0; padding:1rem; background:#f4f8ff; border-radius:14px; box-shadow:0 2px 12px rgba(0,0,0,0.1);">
     <p style="text-align:center; font-weight:800; color:#1e3a5f; margin:0 0 0.3rem; font-size:1rem;">🗺️ 一圖看懂今日分支動線</p>
@@ -602,7 +612,7 @@
   <div class="usj-phase" data-p="1">
     <div class="usj-phase-header">
       <span class="usj-phase-label">第一階段</span>
-      <h3>🏰 任天堂世界：卡位・耀西・拍照　07:40 – 午餐前</h3>
+      <h3 id="usj-p1">🏰 任天堂世界：卡位・耀西・拍照　07:40 – 午餐前</h3>
     </div>
     <div style="margin:0.5rem 0 0; padding:0.7rem 1rem; background:rgba(67,160,71,0.08); border-radius:10px; border-left:4px solid #43A047;">
       <p style="font-size:0.83rem; margin:0; color:var(--text2);">🎯 <strong>本階段策略</strong>：早上<strong>不跟人擠主力設施</strong>——咚奇剛、瑪利歐賽車下午有 Express Pass，到時再玩。上午重點只有三件：<strong>① 搶蘑菇咖啡廳午餐位　② 玩耀西（免排）　③ 園區拍照</strong>。輕鬆愜意，不用衝刺。</p>
@@ -658,7 +668,7 @@
   <div class="usj-phase" data-p="2">
     <div class="usj-phase-header">
       <span class="usj-phase-label">第二階段</span>
-      <h3>🍄 蘑菇咖啡廳用餐　搶到的時段為準</h3>
+      <h3 id="usj-p2">🍄 蘑菇咖啡廳用餐　搶到的時段為準</h3>
     </div>
     <div class="timeline" style="margin-top:1rem;">
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>依預約時段入座 キノピオカフェ</h4><p>在任天堂世界內的主題餐廳享用 Mario 主題餐點，這頓飯就是今日的正餐。時段由掃碼結果決定，前後活動配合調整。</p></div></div>
@@ -683,7 +693,7 @@
   <div class="usj-phase" data-p="3">
     <div class="usj-phase-header">
       <span class="usj-phase-label">第三階段</span>
-      <h3>🛍️ 遊行 ‧ 購物 ‧ 退稅　14:00 – 17:00</h3>
+      <h3 id="usj-p3">🛍️ 遊行 ‧ 購物 ‧ 退稅　14:00 – 17:00</h3>
     </div>
     <div class="timeline" style="margin-top:1rem;">
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>14:00 🎉 USJ 25 週年遊行（約 40 分鐘）</h4><p>好萊塢大道會有 25 週年特別遊行，直接站在旁邊看就好，不用特地搶位。購物區就在附近，遊行結束繼續逛。</p><p style="font-size:0.82rem; color:var(--text2); margin-top:0.4rem;">☔ <strong>雨天規則</strong>：小雨照常演出「雨天限定版」——角色穿雨衣登場（雨衣皮卡丘超稀有！）或全程不停留快速通過；持續大雨才取消。13:30 左右看官方 App 確認當日狀態，取消的話這段改提早購物退稅。</p></div></div>
@@ -697,7 +707,7 @@
   <div class="usj-phase" data-p="4">
     <div class="usj-phase-header">
       <span class="usj-phase-label">第四階段</span>
-      <h3>🍄 重頭戲！任天堂世界與咚奇剛　17:10 – 19:30</h3>
+      <h3 id="usj-p4">🍄 重頭戲！任天堂世界與咚奇剛　17:10 – 19:30</h3>
     </div>
     <div class="timeline" style="margin-top:1rem;">
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>17:10 進入超級任天堂世界</h4><p>輕裝上陣，四人一起衝！夕陽時段任天堂世界光線最美。</p></div></div>
@@ -741,7 +751,7 @@
   </div>
 
   <div style="margin:2rem 0 0.5rem;">
-    <div class="chapter-header"><span class="ch-label">MENU</span><h2>🍄 蘑菇咖啡廳完整菜單</h2></div>
+    <div class="chapter-header" id="usj-menu"><span class="ch-label">MENU</span><h2>🍄 蘑菇咖啡廳完整菜單</h2></div>
     <div style="margin-top:1rem; padding:1rem 1.1rem; background:rgba(67,160,71,0.05); border-radius:12px;">
         <p style="font-size:0.82rem; color:var(--text2); margin:0 0 0.6rem;">📋 官方價格・4 人出發前先圈好餐點、截圖存手機（預約時要直接選好全員餐點才算成功）。</p>
         <div style="margin:0.6rem 0 0; padding:0.7rem 0.9rem; background:rgba(229,57,53,0.08); border-radius:8px; border-left:4px solid #e53935; font-size:0.85rem;">
@@ -799,7 +809,7 @@
   </div>
 
   <div style="margin:2rem 0 0.5rem;">
-    <div class="chapter-header"><span class="ch-label">FOOD</span><h2>🍗 園區美食補給站</h2></div>
+    <div class="chapter-header" id="usj-food"><span class="ch-label">FOOD</span><h2>🍗 園區美食補給站</h2></div>
     <div class="ref-grid" style="margin-top:1rem;">
       <div class="ref-card" style="border:2px solid #8e24aa;">
         <h4>🧝 芙莉蓮主題餐廳（期間限定）</h4>
@@ -856,7 +866,7 @@
     <div class="tip-card"><div class="tip-icon">🎒</div><h4>置物櫃策略</h4><p>退完稅的購物袋鎖進大門口置物櫃再去任天堂，免得整個晚上提著大包小包玩設施。</p></div>
   </div>
   <div style="margin-top:2rem;">
-    <div class="chapter-header"><span class="ch-label">MAP</span><h2>環球影城 園區地圖</h2></div>
+    <div class="chapter-header" id="usj-map"><span class="ch-label">MAP</span><h2>環球影城 園區地圖</h2></div>
     <div style="text-align:center; margin-top:1.5rem;">
       <a href="https://www.usj.co.jp/web/zh/tw/service-guide/parkmap" target="_blank" rel="noopener" class="usj-map-btn">
         🗺️ 開啟官方園區地圖（繁體中文）
