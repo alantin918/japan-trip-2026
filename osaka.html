@@ -470,6 +470,135 @@
     <p>最大化遊玩效率，蘑菇咖啡廳 · 任天堂世界 · 咚奇剛國度</p>
   </div>
 
+  <!-- 今日動線流程圖 -->
+  <div style="margin:1.5rem 0; padding:1rem; background:#f4f8ff; border-radius:14px; box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+    <p style="text-align:center; font-weight:800; color:#1e3a5f; margin:0 0 0.3rem; font-size:1rem;">🗺️ 一圖看懂今日分支動線</p>
+    <p style="text-align:center; font-size:0.78rem; color:#5a7a9a; margin:0 0 0.8rem;">蘑菇咖啡廳 2 種吃法 · 中午 2 種順序 · 遊行 2 個觀賞點</p>
+    <svg viewBox="0 0 600 1090" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block; font-family:'Noto Sans TC',sans-serif;">
+      <defs>
+        <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3b6ea5"/></marker>
+      </defs>
+      <style>
+        .nd{fill:#eef4fb;stroke:#3b6ea5;stroke-width:1.5;}
+        .ndg{fill:#e8f5e9;stroke:#43a047;stroke-width:1.5;}
+        .ndb{fill:#e3f2fd;stroke:#0288d1;stroke-width:1.5;}
+        .ndy{fill:#fff8e1;stroke:#f9a825;stroke-width:1.5;}
+        .ndp{fill:#f3e5f5;stroke:#8e24aa;stroke-width:1.5;}
+        .tx{fill:#1e3a5f;font-size:14px;font-weight:700;text-anchor:middle;}
+        .ts{fill:#1e3a5f;font-size:12px;font-weight:700;text-anchor:middle;}
+        .tm{fill:#90a;font-size:11px;text-anchor:end;}
+        .tm2{fill:#888;font-size:11px;text-anchor:end;}
+        .ln{stroke:#3b6ea5;stroke-width:1.6;fill:none;}
+      </style>
+
+      <!-- 入園 -->
+      <rect class="nd" x="255" y="18" width="90" height="34" rx="8"/>
+      <text class="tx" x="300" y="40">入園</text>
+      <line class="ln" x1="300" y1="52" x2="300" y2="78" marker-end="url(#ah)"/>
+
+      <!-- 蘑菇咖啡 -->
+      <text class="tm" x="130" y="101">9:00</text>
+      <rect class="ndg" x="218" y="80" width="164" height="34" rx="8"/>
+      <text class="tx" x="300" y="102">🍄 蘑菇咖啡廳</text>
+
+      <!-- 分兩路 -->
+      <path class="ln" d="M262,114 Q200,128 185,148" marker-end="url(#ah)"/>
+      <path class="ln" d="M338,114 Q400,128 415,148" marker-end="url(#ah)"/>
+
+      <!-- A: 吃早午餐 -->
+      <rect class="nd" x="95" y="150" width="180" height="34" rx="8"/>
+      <text class="ts" x="185" y="172">A｜直接排隊吃早午餐</text>
+      <!-- B: 等待+排耀西 -->
+      <rect class="nd" x="325" y="150" width="180" height="46" rx="8"/>
+      <text class="ts" x="415" y="168">B｜等 1hr，先排</text>
+      <text class="ts" x="415" y="186">耀西</text>
+
+      <text class="tm2" x="130" y="246">10:00</text>
+      <line class="ln" x1="185" y1="184" x2="185" y2="226" marker-end="url(#ah)"/>
+      <line class="ln" x1="415" y1="196" x2="415" y2="226" marker-end="url(#ah)"/>
+
+      <!-- A: 耀西 -->
+      <rect class="ndg" x="115" y="228" width="140" height="34" rx="8"/>
+      <text class="ts" x="185" y="250">🟢 耀西</text>
+      <!-- B: 吃早午餐 -->
+      <rect class="nd" x="335" y="228" width="160" height="34" rx="8"/>
+      <text class="ts" x="415" y="250">吃早午餐</text>
+
+      <!-- 匯合到拍照 -->
+      <path class="ln" d="M195,262 Q260,285 285,302" marker-end="url(#ah)"/>
+      <path class="ln" d="M405,262 Q340,285 315,302" marker-end="url(#ah)"/>
+      <text class="tm" x="130" y="323">11:30</text>
+      <rect class="nd" x="215" y="302" width="170" height="34" rx="8"/>
+      <text class="tx" x="300" y="324">📸 園內拍照</text>
+
+      <!-- 拍照分兩路（交叉順序）-->
+      <path class="ln" d="M262,336 Q195,352 180,372" marker-end="url(#ah)"/>
+      <path class="ln" d="M338,336 Q405,352 420,372" marker-end="url(#ah)"/>
+
+      <!-- 左路：小小兵→水世界 -->
+      <rect class="ndy" x="95" y="374" width="170" height="34" rx="8"/>
+      <text class="ts" x="180" y="396">👾 小小兵快通</text>
+      <line class="ln" x1="180" y1="408" x2="180" y2="442" marker-end="url(#ah)"/>
+      <rect class="ndb" x="105" y="444" width="150" height="34" rx="8"/>
+      <text class="ts" x="180" y="466">💦 水世界</text>
+
+      <!-- 右路：水世界→小小兵 -->
+      <rect class="ndb" x="345" y="374" width="150" height="34" rx="8"/>
+      <text class="ts" x="420" y="396">💦 水世界</text>
+      <line class="ln" x1="420" y1="408" x2="420" y2="442" marker-end="url(#ah)"/>
+      <rect class="ndy" x="335" y="444" width="170" height="34" rx="8"/>
+      <text class="ts" x="420" y="466">👾 小小兵快通</text>
+
+      <!-- 匯合到遊行 -->
+      <path class="ln" d="M195,478 Q260,505 285,524" marker-end="url(#ah)"/>
+      <path class="ln" d="M405,478 Q340,505 315,524" marker-end="url(#ah)"/>
+      <text class="tm" x="120" y="545">14:00</text>
+      <rect class="nd" x="215" y="524" width="170" height="34" rx="8"/>
+      <text class="tx" x="300" y="546">🎉 遊行</text>
+
+      <!-- 14:20 觀賞點二選一 -->
+      <line class="ln" x1="300" y1="558" x2="300" y2="580" marker-end="url(#ah)"/>
+      <rect x="120" y="582" width="360" height="78" rx="10" fill="#fff" stroke="#bbb" stroke-width="1.2" stroke-dasharray="5,3"/>
+      <text class="tm2" x="112" y="600" text-anchor="end">14:20</text>
+      <text x="300" y="601" style="fill:#666;font-size:11px;text-anchor:middle;">依你走的路線，就近選一個觀賞點</text>
+      <rect class="ndy" x="135" y="610" width="150" height="38" rx="8"/>
+      <text x="210" y="627" style="fill:#1e3a5f;font-size:12px;font-weight:700;text-anchor:middle;">格拉梅西 Park</text>
+      <text x="210" y="641" style="fill:#888;font-size:10px;text-anchor:middle;">小小兵近</text>
+      <rect class="ndb" x="315" y="610" width="150" height="38" rx="8"/>
+      <text x="390" y="627" style="fill:#1e3a5f;font-size:12px;font-weight:700;text-anchor:middle;">好萊塢大道</text>
+      <text x="390" y="641" style="fill:#888;font-size:10px;text-anchor:middle;">水世界近</text>
+
+      <!-- 購物 -->
+      <line class="ln" x1="300" y1="660" x2="300" y2="684" marker-end="url(#ah)"/>
+      <rect class="nd" x="225" y="686" width="150" height="34" rx="8"/>
+      <text class="tx" x="300" y="708">🛍️ 購物退稅</text>
+
+      <!-- 哈利波特 -->
+      <line class="ln" x1="300" y1="720" x2="300" y2="744" marker-end="url(#ah)"/>
+      <rect class="ndp" x="215" y="746" width="170" height="34" rx="8"/>
+      <text class="tx" x="300" y="768">⚡ 哈利波特</text>
+
+      <!-- 休息 -->
+      <line class="ln" x1="300" y1="780" x2="300" y2="804" marker-end="url(#ah)"/>
+      <rect class="nd" x="205" y="806" width="190" height="34" rx="8"/>
+      <text class="ts" x="300" y="828">🪑 15:30 中場休息</text>
+
+      <!-- 任天堂 -->
+      <line class="ln" x1="300" y1="840" x2="300" y2="864" marker-end="url(#ah)"/>
+      <text class="tm" x="120" y="885">17:10</text>
+      <rect class="ndg" x="205" y="866" width="190" height="34" rx="8"/>
+      <text class="tx" x="300" y="888">🍄 任天堂世界</text>
+
+      <!-- 夜景 + END -->
+      <line class="ln" x1="300" y1="900" x2="300" y2="924" marker-end="url(#ah)"/>
+      <rect class="ndp" x="205" y="926" width="190" height="34" rx="8"/>
+      <text class="ts" x="300" y="948">🏰 19:00 城堡夜景</text>
+      <line class="ln" x1="300" y1="960" x2="300" y2="984" marker-end="url(#ah)"/>
+      <text x="300" y="1010" style="fill:#1e3a5f;font-size:18px;font-weight:800;text-anchor:middle;">END 🎢</text>
+      <text x="300" y="1032" style="fill:#888;font-size:11px;text-anchor:middle;">19:30 離場 → CityWalk 晚餐</text>
+    </svg>
+  </div>
+
   <div class="usj-phase" data-p="1">
     <div class="usj-phase-header">
       <span class="usj-phase-label">第一階段</span>
@@ -484,7 +613,19 @@
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>Step 1｜進任天堂區後就「不離開」</h4><p>⚠️ <strong>整理券發行日，離開任天堂區就回不來</strong>——上午全程待在區內。進區後先到<strong>キノピオカフェ（蘑菇咖啡廳）店前</strong>確認 QR Code 位置與排隊區。</p></div></div>
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>Step 2｜~08:45 ヨッシー・アドベンチャー</h4><p>早場幾乎無人排隊（約 20–30 分鐘）。坐著亞奇小車悠閒遊園，順便居高欣賞任天堂世界全景，拍照超好看。</p></div></div>
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>Step 3｜~09:15 園區拍照＋逛店</h4><p>任天堂世界＋咚奇剛國度繞一圈盡情拍照——<strong>綠色水管入口趁早上人少、未收費時先拍</strong>！碧姬城堡、庫巴城也趁淨空合照。預覽周邊商品（<strong>先不買</strong>，下午統一購物退稅）。咚奇剛、瑪利歐賽車<strong>早上不排</strong>，留給下午 Express Pass。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>⭐ 蘑菇咖啡廳搶位（不必執著 11:00，能訂早就訂）</h4><p><strong>2026 新制</strong>：①各時段「來店 1 小時前」才釋出（例：10 點在店旁就能搶 11:00 檔，分批冒出 2 分鐘內搶光）；②須在店旁 80m 內、開啟定位；③<strong>預約時直接選好全員餐點</strong>才算成功——<strong>4 人菜單出發前先決定、截圖存手機</strong>。</p><p style="font-size:0.82rem; color:var(--text2); margin-top:0.4rem;"><strong>彈性打法</strong>：①能搶到更早的時段（如 10:30）就直接訂，不必死等 11:00；②現場若人不多、看得到空位，<strong>直接排隊進去最省事</strong>，免搶券；③搶不到就刷取消位，或改吃侏羅紀 Lost World 餐廳。🌧️ <strong>雨天紅利</strong>：人少時可能不發整理券→直接排隊就能進。<br>💡 原則：搶到哪個時段就吃哪檔，後面水世界（11:00／13:00／15:00 三場）跟著調即可。</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>⭐ 蘑菇咖啡廳：當天看狀況選一種吃法</h4><p style="margin-bottom:0.6rem;"><strong>共同前提</strong>：須在店旁 80m 內、開定位操作；預約要直接選好<strong>全員餐點</strong>才算成功（4 人菜單出發前先決定、截圖存手機）。空腹進園，<strong>能早吃就早吃</strong>。</p>
+        <div style="display:grid; gap:0.6rem;">
+          <div style="background:rgba(67,160,71,0.08); border-radius:8px; padding:0.6rem 0.9rem; font-size:0.83rem;">
+            <strong style="color:#2e7d32;">🍴 吃法 A｜直接排隊（人少/雨天時）</strong><br>
+            現場沒在發整理券、看得到空位 → 直接排隊進去最省事。想吃就去，<strong>最早 9 點多就能吃到</strong>，吃完再玩耀西、拍照。
+          </div>
+          <div style="background:rgba(0,136,204,0.07); border-radius:8px; padding:0.6rem 0.9rem; font-size:0.83rem;">
+            <strong style="color:#0288d1;">🎫 吃法 B｜搶整理券（人多時）</strong><br>
+            各時段「來店 1 小時前」分批釋出（2 分鐘內搶光）。<strong>搶到的時段＝搶的當下 + 1 小時</strong>，一進園就搶能拿最早檔（約 9:30）。搶到後利用空檔先玩耀西、拍照，時間到回來吃。搶不到就刷取消位，或改吃侏羅紀 Lost World 餐廳。
+          </div>
+        </div>
+        <p style="font-size:0.82rem; color:var(--text2); margin-top:0.5rem;">💡 不管哪種，<strong>搶到/排到哪檔就吃哪檔</strong>，後面水世界（11:00／13:00／15:00 三場）跟著調即可。預估園內拍照玩到 <strong>11:30 結束</strong>第一階段。</p>
+      </div></div>
     </div>
   </div>
 
